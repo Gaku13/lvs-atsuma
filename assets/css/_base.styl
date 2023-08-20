@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Candal&display=swap');
+
+*,
+:after,
+:before
+  box-sizing border-box
+
+html
+  font-family 'Noto Sans JP', Meiryo, sans-serif
+  font-size 16px
+  -ms-text-size-adjust 100%
+  -webkit-text-size-adjust 100%
+  -moz-osx-font-smoothing grayscale
+  -webkit-font-smoothing antialiased
+
+body
+  margin 0
+  background-color $white
+
+a
+  color $text
+  text-decoration none
+
+img,
+svg
+  vertical-align middle
+
+button
+  background transparent
+  border 0
+  outline 0
+  cursor pointer
+
+h2
+  font-family 'Candal', sans-serif
+
+.container
+  position relative
+  max-width 1440px
+  margin-left auto
+  margin-right auto
+  padding: 0 80px
+  @media (max-width: $desktop-large)
+    max-width none
+  @media (max-width: $desktop)
+    padding 0 40px
+  @media (max-width: $tablet)
+    padding 0 20px
+
+.container--full
+  position relative
+  width 100%
+
+// link
+.link
+  display flex
+  position relative
+  align-items center
+  font-size 20px
+  text-decoration none
+  span
+    display block
+    color $primary
+    padding-left 50px
+    font-weight 700
+    transform translate3d(0, 0, 0)
+    transition transform .25s
+    transition-timing-function cubic-bezier(.18, .42, .6, .84)
+  @media (max-width: 1023px)
+    font-size 16px
+    background-size 24px
+    span
+      padding-left 40px
+
+.page-enter-active, .page-leave-active
+  transition opacity .4s ease-out
+
+.page-enter, .page-leave-active
+  opacity 0
