@@ -6,7 +6,7 @@
   box-sizing border-box
 
 html
-  font-family 'Noto Sans JP', Meiryo, sans-serif
+  font-family 'Noto Sans JP', -apple-system, 'SF Display', Hiragino Sans, Hiragino Kaku Gothic ProN, Meiryo, sans-serif
   font-size 16px
   -ms-text-size-adjust 100%
   -webkit-text-size-adjust 100%
@@ -15,7 +15,7 @@ html
 
 body
   margin 0
-  background-color $white
+  background-color $bg
 
 a
   color $text
@@ -72,8 +72,10 @@ h2
     span
       padding-left 40px
 
-.page-enter-active, .page-leave-active
+.page-enter-active,
+.page-leave-active
   transition opacity .4s ease-out
 
-.page-enter, .page-leave-active
+.page-enter,
+.page-leave-active
   opacity 0

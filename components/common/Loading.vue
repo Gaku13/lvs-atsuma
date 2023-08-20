@@ -1,6 +1,6 @@
 <template lang="pug">
-  .loading
-    .loading-screen
+.loading
+  .loading-screen
 </template>
 
 <style lang="stylus" scoped>

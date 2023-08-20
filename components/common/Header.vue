@@ -1,27 +1,35 @@
 <template lang="pug">
 // headroom
 header
-  nuxt-link.logo( to="/" )
-    Logo
-  nav
-    // a.nav-button( href="#" @click="click" )
-      | menu
-    .nav-container
-      // a.nav-close( href="#" @click="close" )
-        X
-      ul
-        li
-          nuxt-link( v-scroll-to="feature" to ) LVSについて
-        li
-          nuxt-link( v-scroll-to="faq" to ) 協力隊制度について
-        li
-          nuxt-link( v-scroll-to="faq" to ) スケジュール・エントリー要項
-    a.download-button( href="#" target="_blank" rel="noopener noreferrer nofollow" ) エントリーする
+  .container
+    nuxt-link.logo( to="/" )
+      Logo
+    nav
+      // a.nav-button( href="#" @click="click" )
+        | menu
+      .nav-container
+        a.nav-close( href="#" @click="close" )
+          X
+        ul
+          li
+            nuxt-link( v-scroll-to="feature" to ) LVSについて
+          li
+            nuxt-link( v-scroll-to="faq" to ) 協力隊制度について
+          li
+            nuxt-link( v-scroll-to="faq" to ) スケジュール・エントリー要項
+  .fixed-nav
+    a.entry-button( href="#" target="_blank" rel="noopener noreferrer nofollow" )
+      | エントリーする
+      Login.icon( aria-hidden="true" role="presentation" )
+    button( type="button" )
+      Menu.icon( aria-hidden="true" role="presentation" )
 </template>
 
 <script>
 import Logo from '~/static/images/logo.svg?inline'
 import X from '~/static/images/icon/x.svg?inline'
+import Login from '~/static/images/icon/login.svg?inline'
+import Menu from '~/static/images/icon/menu.svg?inline'
 
 import { headroom } from 'vue-headroom'
 
@@ -29,6 +37,8 @@ export default {
   components: {
     Logo,
     X,
+    Login,
+    Menu,
     headroom,
   },
   data() {
@@ -70,13 +80,12 @@ export default {
 
 <style lang="stylus">
   header
+    position relative
     display flex
     align-items center
     width: 100%
     height 64px
-    padding 0 24px
-    background $white
-    z-index $zindex-header
+    padding 0 80px
     @media (max-width: $phone)
       justify-content: space-between
       height 50px
@@ -125,5 +134,35 @@ export default {
             color $primary
       @media (max-width: $phone)
         display none
+  .fixed-nav
+    position fixed
+    top 0
+    right 0
+    display flex
+    align-items center
+    padding 16px
+    background-color $black
+    z-index $zindex-fixed
+    a,
+    button
+      display flex
+      align-items center
+      height 32px
+      color $textContrast
+      font-weight 600
+    .icon
+      color $textContrast
+    button
+      position relative
+      &:before
+        content ''
+        position absolute
+        top 0
+        bottom 0
+        left -16px
+        border-left 1px solid $whiteTransparent
+    a
+      .icon
+        margin-left 8px
 </style>
 

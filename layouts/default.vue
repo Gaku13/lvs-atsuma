@@ -1,11 +1,11 @@
 <template lang="pug">
-  .page
-    Header
-    .nuxt-container
-      Loading
-      .nuxt-body
-        nuxt
-      Footer
+.page
+  Header
+  .nuxt-container
+    // Loading
+    .nuxt-body
+      nuxt
+    Footer
 </template>
 
 <style lang="stylus">
@@ -21,13 +21,13 @@
 <script>
 import Header from '~/components/common/Header.vue';
 import Footer from '~/components/common/Footer.vue';
-import Loading from '~/components/common/Loading.vue';
+// import Loading from '~/components/common/Loading.vue';
 
 export default {
   components: {
       Header,
       Footer,
-      Loading,
+      // Loading,
   },
   mounted() {
     this.$nextTick(() => {

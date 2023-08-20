@@ -1,13 +1,13 @@
 <template lang="pug">
-  main.home
-    Hero
-    Feature
-    FAQ
-    // Mission
-    // Value
-    // Service
-    // Flow
-    // About
+main.home
+  Hero
+  Feature
+  FAQ
+  // Mission
+  // Value
+  // Service
+  // Flow
+  // About
 </template>
 
 <script>
